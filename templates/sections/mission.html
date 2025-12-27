@@ -1,0 +1,32 @@
+<section class="py-24 bg-[#f4f4f4]">
+    <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12 items-center">
+
+        <div class="bg-yellow-400 p-8 h-full">
+            <h3 class="inline-block bg-orange-500 text-white px-4 py-2 font-bold mb-6">
+                MISSION
+            </h3>
+
+            <ul class="text-sm leading-[1.7] space-y-3">
+                {% for point in mission.mission_points %}
+                <li>{{ point }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="w-64 h-64 rounded-full bg-gray-300"></div>
+        </div>
+
+        <div class="bg-yellow-400 p-8 h-full">
+            <h3 class="inline-block bg-orange-500 text-white px-4 py-2 font-bold mb-6">
+                CORE VALUES
+            </h3>
+            <ul class="text-sm leading-[1.7] space-y-3">
+                {% for value in mission.core_values %}
+                <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</section>

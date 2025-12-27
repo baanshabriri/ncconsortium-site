@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- PAGE 1 -->
+<section id="hero" class="section-page">
+  {% include "components/hero.html" %}
+</section>
+
+<!-- PAGE 2 -->
+<section id="company" class="section-page">
+  {% include "sections/company_overview.html" %}
+</section>
+
+<!-- PAGE 3 -->
+<section id="mission" class="section-page">
+  {% include "sections/mission.html" %}
+</section>
+
+<!-- PAGE 4–12 -->
+<!-- PRODUCTS -->
+<section id="products" class="min-h-screen border-b border-gray-200">
+  <section class="py-24 bg-[#f4f4f4]">
+    <div class="max-w-7xl mx-auto px-8">
+
+      <div class="flex items-center gap-6 mb-20">
+        <h2 class="text-3xl font-extrabold tracking-wide">
+          OUR PRODUCTS
+        </h2>
+        <div class="flex-1 h-2 bg-yellow-400"></div>
+      </div>
+
+      {% for section in product_sections %}
+      {% include "components/product_grid.html" %}
+      {% endfor %}
+
+    </div>
+  </section>
+</section>
+
+<!-- PAGE 13–16 -->
+<!-- <section id="other-products">
+  {% include "sections/other_products.html" %}
+</section> -->
+
+<!-- PAGE 17 -->
+<section id="contact" class="min-h-screen">
+  {% include "sections/contact.html" %}
+</section>
+
+{% endblock %}

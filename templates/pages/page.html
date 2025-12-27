@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-8">
+
+      <!-- Section header -->
+      <div class="flex items-center gap-6 mb-20">
+        <h2 class="text-3xl font-extrabold tracking-wide">
+          OUR PRODUCTS
+        </h2>
+        <div class="flex-1 h-2 bg-yellow-400"></div>
+      </div>
+
+      {% for section in page.product_sections.all %}
+        {% include "components/product_section.html" with section=section %}
+      {% endfor %}
+
+    </div>
+  </section>
+{% endblock %}
+

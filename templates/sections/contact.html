@@ -1,0 +1,28 @@
+<section class="py-24 bg-[#f4f4f4]">
+    <div class="max-w-5xl mx-auto px-8 text-center">
+
+        <h2 class="text-3xl font-extrabold mb-12">
+            CONTACT
+        </h2>
+
+        <div class="bg-white p-12 shadow-md space-y-4 text-sm leading-relaxed">
+
+            <p class="font-bold text-lg">{{ contact.company_name }}</p>
+
+            <p>GSTIN: {{ contact.gstin }}</p>
+            <p>
+                Phone:
+                {{ contact.phone_primary }},
+                {{ contact.phone_secondary }}
+            </p>
+
+            <p>Email: {{ contact.email }}</p>
+
+            <p class="whitespace-pre-line">
+                Address: {{ contact.address }}
+            </p>
+
+        </div>
+
+    </div>
+</section>
