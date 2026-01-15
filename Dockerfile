@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN addgroup --system nonroot && adduser --system --ingroup nonroot nonroot
 
@@ -44,4 +44,4 @@ USER nonroot
 
 EXPOSE 8000
 
-CMD ["python", "-m", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:80"]
+CMD ["python3", "-m", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
