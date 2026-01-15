@@ -1,25 +1,35 @@
-<section class="relative min-h-screen bg-[#f4f4f4] flex items-center">
-  <div class="absolute left-0 bottom-0 w-1/4 h-1/2 bg-yellow-400"></div>
+<section class="relative min-h-screen bg-[#f4f4f4] flex items-center py-16 md:py-0">
+  <!-- Decorative block (desktop only) -->
+  <div class="hidden md:block absolute left-0 bottom-0 w-1/4 h-1/2 bg-yellow-400"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8
+           grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center text-center md:text-left">
 
     <!-- Logo -->
-    <div class="bg-white w-64 h-80 shadow-lg flex items-center justify-center">
-      <div class="text-orange-500 text-4xl font-serif tracking-widest">
-        NC
-        <div class="text-xs text-center mt-2 text-gray-600">CONSORTIUM</div>
+    <div class="flex justify-center md:justify-start">
+      <div class="bg-white w-48 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80
+               shadow-lg flex items-center justify-center">
+        <div class="text-orange-500 text-3xl sm:text-4xl font-serif tracking-widest">
+          NC
+          <div class="text-[10px] sm:text-xs text-center mt-2 text-gray-600">
+            CONSORTIUM
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Title -->
     <div>
-      <h1 class="text-6xl font-extrabold text-orange-500 leading-tight">
-        FARM BASED<br>
-        PROCURE AND<br>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl
+               font-extrabold text-orange-500 leading-tight">
+        ORGANIC<br />
+        FARM-BASED<br />
+        PROCURE AND<br />
         SUPPLY
       </h1>
 
-      <button class="mt-10 bg-yellow-400 px-6 py-3 font-semibold">
+      <button class="mt-8 md:mt-10 bg-yellow-400 px-6 py-3 font-semibold
+               inline-block">
         READ MORE
       </button>
     </div>

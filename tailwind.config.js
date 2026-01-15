@@ -2,7 +2,10 @@ export default {
     content: [
         "./templates/**/*.html",
         "./pages/**/*.py",
-        "./core/**/*.py"
+        "./core/**/*.py",
+        '../../templates/**/*.html',
+        '../../**/*.html',
+
     ],
     theme: {
         extend: {
