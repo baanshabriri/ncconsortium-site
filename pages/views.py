@@ -8,7 +8,8 @@ def page_view(request, slug):
     return render(request, "pages/page.html", {"page": page})
 
 def home(request):
-    product_sections = ProductSection.objects.prefetch_related("items").all()
+    product_sections = ProductSection.objects.filter(id=1).prefetch_related("items").all()
+    other_product_sections = ProductSection.objects.filter(id__in=[2, 3, 4]).prefetch_related("items").all()
     company = CompanyOverview.objects.first()
     mission = MissionContent.objects.first()
     contact = ContactInfo.objects.first()
@@ -18,7 +19,7 @@ def home(request):
         "pages/home.html",
         {
             "product_sections": product_sections,
-            "product_sections": product_sections,
+            "other_product_sections": other_product_sections,            
             "company": company,
             "mission": mission,
             "contact": contact,

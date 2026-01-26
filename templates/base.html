@@ -6,9 +6,23 @@
   <title>{% block title %}NC Consortium{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&display=swap" rel="stylesheet" />
   <style>
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Ensure sections have consistent spacing */
+    .section-page {
+      min-height: 100vh;
+    }
+
+    @media (max-width: 767px) {
+      .section-page {
+        min-height: auto;
+        /* padding-top: 1rem; */
+        padding-bottom: 2px;
+      }
     }
   </style>
 </head>
@@ -16,55 +30,71 @@
 <body class="bg-white text-gray-800">
 
   <!-- NAVBAR -->
-  <nav class="bg-white md:shadow-sm border-b md:border-0 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto
-       px-4 sm:px-6 md:px-8
-       py-2 md:py-4
-       flex items-center justify-between">
+  <nav class="bg-white/95 backdrop-blur-sm shadow-md fixed top-0 w-full z-50 border-b border-orange-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
 
-      <!-- Brand -->
-      <a href="#hero" class="text-orange-500 font-serif tracking-widest
-       text-base md:text-lg nav-link leading-none">
-        NC
-        <span class="block text-[9px] md:text-[10px]
-         text-gray-600 tracking-normal mt-0.5">
-          CONSORTIUM
-        </span>
-      </a>
+        <!-- Brand Logo -->
+        <a href="#hero" class="flex items-center space-x-2 nav-link group">
+          <div
+            class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+            <span class="text-white font-bold text-lg md:text-xl">NC</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-gray-800 font-bold text-sm md:text-base tracking-wide">CONSORTIUM</span>
+            <span class="text-orange-500 text-[10px] font-medium">Excellence in Trade</span>
+          </div>
+        </a>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex gap-6 text-sm font-semibold">
-        <a href="#hero" class="nav-link hover:text-orange-500">Home</a>
-        <a href="#company" class="nav-link hover:text-orange-500">Company</a>
-        <a href="#mission" class="nav-link hover:text-orange-500">Mission</a>
-        <a href="#products" class="nav-link hover:text-orange-500">Products</a>
-        <a href="#other-products" class="nav-link hover:text-orange-500">Other Products</a>
-        <a href="#contact" class="nav-link hover:text-orange-500">Contact</a>
-      </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#hero"
+            class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">Home</a>
+          <a href="#company"
+            class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">Company</a>
+          <a href="#mission"
+            class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">Mission</a>
+          <a href="#products"
+            class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">Products</a>
+          <a href="#other-products"
+            class="nav-link px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-all">Other
+            Products</a>
+          <a href="#contact"
+            class="nav-link px-4 py-2 ml-2 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-all shadow-md hover:shadow-lg">Contact</a>
+        </div>
 
-      <!-- Mobile Toggle -->
-      <button id="menu-btn" class="md:hidden text-lg leading-none p-1" aria-label="Toggle Menu">
-        ☰
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden bg-white border-t
-            overflow-hidden
-            transition-all duration-300 ease-out
-            max-h-0 opacity-0">
-      <div class="px-4 py-3 flex flex-col gap-3 text-sm font-semibold">
-        <a href="#hero" class="nav-link">Home</a>
-        <a href="#company" class="nav-link">Company</a>
-        <a href="#mission" class="nav-link">Mission</a>
-        <a href="#products" class="nav-link">Products</a>
-        <a href="#other-products" class="nav-link">Other Products</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-orange-50 transition-colors"
+          aria-label="Toggle Menu">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="md:hidden bg-white border-t border-orange-100 overflow-hidden transition-all duration-300 ease-out max-h-0 opacity-0">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#hero"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg transition-all">Home</a>
+        <a href="#company"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg transition-all">Company</a>
+        <a href="#mission"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg transition-all">Mission</a>
+        <a href="#products"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg transition-all">Products</a>
+        <a href="#other-products"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg transition-all">Other
+          Products</a>
+        <a href="#contact"
+          class="nav-link block px-4 py-3 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-all text-center">Contact
+          Us</a>
+      </div>
+    </div>
   </nav>
+
 
 
 

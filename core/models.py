@@ -29,6 +29,8 @@ class ProductItem(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to="products/", blank=True)
+    image_url = models.URLField(blank=True)
+    is_active = models.BooleanField(default=True)
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -42,6 +44,7 @@ class ProductItem(models.Model):
 class CompanyOverview(models.Model):
     heading = models.CharField(max_length=200, default="COMPANY OVERVIEW")
     body = models.TextField()
+    image = models.ImageField(upload_to="company_overview/", blank=True)
 
     def __str__(self):
         return "Company Overview"
@@ -54,6 +57,7 @@ class MissionContent(models.Model):
     core_values = models.JSONField(
         help_text="List of core values"
     )
+    image = models.ImageField(upload_to="mission_content/", blank=True)
 
     def __str__(self):
         return "Mission & Core Values"

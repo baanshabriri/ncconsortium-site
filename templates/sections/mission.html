@@ -1,4 +1,4 @@
-<section class="py-24 bg-[#f4f4f4]">
+<!-- <section class="py-24 bg-[#f4f4f4]">
     <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12 items-center">
 
         <div class="bg-yellow-400 p-8 h-full">
@@ -28,5 +28,57 @@
             </ul>
         </div>
 
+    </div>
+</section> -->
+
+<section id="mission" class="section-page py-16 md:py-24 bg-[#f4f4f4]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+
+            <!-- Mission Column -->
+            <div class="reveal bg-yellow-400 p-6 md:p-8 h-full">
+                <h3 class="inline-block bg-orange-500 text-white px-4 py-2 font-bold text-sm md:text-base mb-6">
+                    MISSION
+                </h3>
+
+                <ol class="text-sm leading-[1.7] space-y-3">
+                    {% for point in mission.mission_points %}
+                    <li class="flex items-start space-x-3">
+                        <span class="text-orange-500 font-bold mt-0.5">•</span>
+                        <span><strong>{{ point }}</strong></span>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            <!-- Center Circle -->
+            <div class="reveal flex justify-center order-first md:order-none">
+                <div
+                    class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 shadow-2xl flex items-center justify-center">
+                    <svg class="w-24 h-24 md:w-32 md:h-32 text-white" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Core Values Column -->
+            <div class="reveal bg-yellow-400 p-6 md:p-8 h-full">
+                <h3 class="inline-block bg-orange-500 text-white px-4 py-2 font-bold text-sm md:text-base mb-6">
+                    CORE VALUES
+                </h3>
+                <ol class="text-sm leading-[1.7] space-y-4">
+                    {% for value in mission.core_values %}
+                    <li class="flex items-start space-x-3">
+                        <span class="text-orange-500 font-bold mt-0.5">•</span>
+                        <span><strong>{{value}}</strong></span>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+        </div>
     </div>
 </section>
