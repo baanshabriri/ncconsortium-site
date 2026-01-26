@@ -30,7 +30,7 @@ DEBUG = True
 
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-ALLOWED_HOSTS = ["ncconsortium.in", "www.ncconsortium.in"]
+ALLOWED_HOSTS = ["ncconsortium.in", "www.ncconsortium.in", "127.0.0.1"]
 
 # Application definition
 
