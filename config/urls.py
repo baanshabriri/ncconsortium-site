@@ -19,10 +19,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import contact_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("pages.urls")),
+    path("contact/", contact_view, name="contact"),
+
 ]
 
 if settings.DEBUG:

@@ -8,7 +8,8 @@ from .models import (
     FooterContent,
     Page, 
     ProductSection, 
-    ProductItem
+    ProductItem,
+    ContactSubmission
 )
 
 @admin.register(CompanyOverview)
@@ -23,6 +24,10 @@ class MissionContentAdmin(admin.ModelAdmin):
 
 @admin.register(ContactInfo)
 class ContactInfoAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(ContactSubmission)
+class ContactSubmissionAdmin(admin.ModelAdmin):
     pass
 
 
@@ -48,3 +53,4 @@ class ProductItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Page)
+
