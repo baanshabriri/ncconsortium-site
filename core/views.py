@@ -2,6 +2,7 @@
 
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.contrib import messages
 from .models import ContactSubmission
 
 def contact_view(request):
@@ -20,19 +21,27 @@ def contact_view(request):
         )
 
         # Send email
-        send_mail(
-            subject="New Contact Form Submission",
-            message=f"""
-                Name    : {name}
-                Email   : {email}
-                Phone   : {phone}
-                Message : {message}
-            """,
-            from_email="no-reply@ncconsortium.in",
-            recipient_list=["your-email@gmail.com"],
-            fail_silently=False,
-        )
-
+        # try:
+        #     send_mail(
+        #         subject="New Contact Form Submission",
+        #         message=f"""
+        #             Name    : {name}
+        #             Email   : {email}
+        #             Phone   : {phone}
+        #             Message : {message}
+        #         """,
+        #         from_email="no-reply@ncconsortium.in",
+        #         recipient_list=["your-email@gmail.com"],
+        #         fail_silently=False,
+        #     )
+        # except:
+        #     print(f"""Something went wrong for
+        #             Name    : {name}
+        #             Email   : {email}
+        #             Phone   : {phone}
+        #             Message : {message}
+        #         """)
+        messages.success(request, "Your message has been sent successfully!")
         return redirect("/")  # or success page
 
-    return render(request, "contact.html")
+    return render(request, "base.html")
