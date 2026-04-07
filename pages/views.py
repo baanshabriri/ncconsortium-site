@@ -11,9 +11,12 @@ def home(request):
     product_sections = ProductSection.objects.filter(id=1).prefetch_related("items").all()
     other_product_sections = ProductSection.objects.filter(id__in=[2, 3, 4]).prefetch_related("items").all()
     company = CompanyOverview.objects.first()
+    print(f"Company Overview: {company}")
     mission = MissionContent.objects.first()
     contact = ContactInfo.objects.first()
     footer = FooterContent.objects.first()
+    process = company.process_image if company else None
+    print(f"Process Image: {process}")
     return render(
         request,
         "pages/home.html",
@@ -22,6 +25,7 @@ def home(request):
             "other_product_sections": other_product_sections,            
             "company": company,
             "mission": mission,
+            "process": process,
             "contact": contact,
             "footer": footer,
         }
