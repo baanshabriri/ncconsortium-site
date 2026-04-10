@@ -27,10 +27,11 @@ SECRET_KEY = 'django-insecure-=buqh90k7_!yq_ov#j$+93mzt2$0554y%#=qnyv$4s#b$7n%z$
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
+# DEBUG = True
 
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
-
+# ALLOWED_HOSTS = ["www.ncconsortium.in", "ncconsortium.in", "localhost", "0.0.0.0", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',    
     'django.contrib.staticfiles',
+    "django.contrib.sitemaps",
     "core",
     "pages",
     "tailwind"
